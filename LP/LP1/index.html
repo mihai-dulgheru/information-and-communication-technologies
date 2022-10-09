@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main id="main">
+      <div id="calculator">
+        <div id="display">
+          <p></p>
+        </div>
+        <div id="buttons">
+          <div>
+            <button class="actions" onclick="handleClick(this.innerHTML)">
+              C
+            </button>
+            <button class="actions" onclick="handleClick(this.innerHTML)">
+              AC
+            </button>
+            <button class="actions" onclick="handleClick(this.innerHTML)">
+              /
+            </button>
+            <button class="actions" onclick="handleClick(this.innerHTML)">
+              x
+            </button>
+          </div>
+          <div>
+            <div id="digits"></div>
+            <div id="actions-buttons">
+              <button class="actions" onclick="handleClick(this.innerHTML)">
+                -
+              </button>
+              <button class="actions" onclick="handleClick(this.innerHTML)">
+                +
+              </button>
+              <button
+                id="equal"
+                class="actions"
+                onclick="handleClick(this.innerHTML)"
+              >
+                =
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="script.js"></script>
+</html>

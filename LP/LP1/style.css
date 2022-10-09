@@ -1,0 +1,83 @@
+:root {
+  --bg-display: #28354f;
+}
+
+body {
+  background-color: #b1dbf3;
+  width: 100vw;
+  height: 100vh;
+}
+
+#calculator {
+  width: 240px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  background-color: #388095;
+  border: 1px solid #304156;
+}
+
+#buttons {
+  font-size: 0px;
+}
+
+#zero {
+  width: 120px;
+}
+
+#digits {
+  width: 75%;
+  float: left;
+}
+
+#digits button {
+  background-color: #28354f;
+}
+
+#actions-buttons {
+  float: right;
+  width: 25%;
+}
+
+#equal {
+  height: 120px;
+  background-color: #da8128;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#display {
+  background-color: blue;
+}
+
+#display p {
+  background-color: var(--bg-display);
+  margin: 0;
+  height: 60px;
+  color: white;
+  font-size: larger;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+button {
+  border-color: #48586e;
+}
+
+.buttons-color {
+  color: #5b6d85;
+}
+
+.actions {
+  color: white;
+}
