@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Color Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Guess the color game</h1>
+          <h1 id="color-display">RGB(184, 170, 67)</h1>
+        </div>
+        <div>
+          <div>
+            <button id="new-colors-button">New colors</button>
+            <div class="modes">
+              <button id="easy-button">Easy</button>
+              <button id="hard-button" class="selected">Hard</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <h2 id="message-display"></h2>
+        <div id="squares">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
