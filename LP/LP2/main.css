@@ -1,0 +1,59 @@
+body {
+  background-color: beige;
+}
+
+#calculator {
+  background-color: cadetblue;
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#display {
+  width: 280px;
+  height: 70px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  line-height: 70px;
+  margin-right: 20px;
+}
+
+#cifreWrapper {
+  width: 210px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cifra {
+  width: 70px;
+  height: 70px;
+  box-sizing: border-box;
+  line-height: 70px;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}
+
+.functie {
+  background-color: darkcyan;
+  width: 70px;
+  height: 70px;
+  box-sizing: border-box;
+  line-height: 70px;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}
+
+#zero {
+  width: 210px;
+}
+
+#egal {
+  height: 140px;
+  line-height: 140px;
+  background-color: bisque;
+}
