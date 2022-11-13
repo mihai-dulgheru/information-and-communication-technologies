@@ -1,10 +1,9 @@
 // multiple async
-const promisify = (item, delay) =>
-  new Promise((resolve) => setTimeout(() => resolve(item), delay));
+const promisify = (item, delay) => new Promise((resolve) => setTimeout(() => resolve(item), delay));
 
-const a = () => promisify("a", 1000);
-const b = () => promisify("b", 5000);
-const c = () => promisify("c", 3000);
+const a = () => promisify('a', 1000);
+const b = () => promisify('b', 5000);
+const c = () => promisify('c', 3000);
 
 async function parallel() {
   const promises = [a(), b(), c()];

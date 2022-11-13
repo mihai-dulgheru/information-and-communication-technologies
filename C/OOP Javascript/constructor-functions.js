@@ -8,11 +8,11 @@ function Elf(name, weapon) {
 Elf.prototype.attack = function () {
   // this adds the "attack" method as prototype
   // of Elf
-  return this.name + " attack with " + this.weapon;
+  return this.name + ' attack with ' + this.weapon;
 };
 
-const sam = new Elf("Sam", "bow");
-const peter = new Elf("Peter", "bow");
+const sam = new Elf('Sam', 'bow');
+const peter = new Elf('Peter', 'bow');
 console.log(sam.attack());
 console.log(peter.attack());
 

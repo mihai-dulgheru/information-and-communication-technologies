@@ -1,23 +1,23 @@
-var display = "0";
+var display = '0';
 var operand1 = 0;
 var operand2 = null;
 var operation = null;
 
 function initialization() {
-  display = "0";
+  display = '0';
   operand1 = 0;
   operand2 = null;
   operation = null;
 }
 
 function updateDisplay() {
-  document.getElementById("display").innerText = display;
+  document.getElementById('display').innerText = display;
 }
 
-var digits = Array.from(document.getElementsByClassName("cifra"));
+var digits = Array.from(document.getElementsByClassName('cifra'));
 
 digits.forEach((element) => {
-  element.addEventListener("click", pressedDigit);
+  element.addEventListener('click', pressedDigit);
 });
 
 function pressedDigit(e) {
@@ -40,20 +40,20 @@ function pressedDigit(e) {
   updateDisplay();
 }
 
-var functions = Array.from(document.getElementsByClassName("functie"));
+var functions = Array.from(document.getElementsByClassName('functie'));
 
 functions.forEach((element) => {
-  element.addEventListener("click", pressedFunction);
+  element.addEventListener('click', pressedFunction);
 });
 
 function pressedFunction(e) {
   switch (e.target.innerText) {
-    case "C":
+    case 'C':
       initialization();
       break;
-    case "=":
+    case '=':
       if (operand2 !== null) {
-        if (display.includes("x")) {
+        if (display.includes('x')) {
           operand1 *= operand2;
         } else {
           operand1 = eval(display);
@@ -63,7 +63,7 @@ function pressedFunction(e) {
         display = operand1;
       }
       break;
-    case "Șterge":
+    case 'Șterge':
       if (operand2 !== null) {
         operand2 = Math.floor(operand2 / 10);
         display = operand1 + operation + operand2;

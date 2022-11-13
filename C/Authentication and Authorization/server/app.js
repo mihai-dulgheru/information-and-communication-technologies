@@ -1,24 +1,24 @@
 // server app
-const cors = require("cors");
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const logger = require("morgan");
+const cors = require('cors');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const logger = require('morgan');
 
 const app = express();
 const port = 3000;
-const secret = "serverKeptSecret";
+const secret = 'serverKeptSecret';
 
-app.use(logger("dev"));
+app.use(logger('dev'));
 app.use(cors()); // see more at https:// www.npmjs.com/package/cors
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); // we expect JSON data to be sent as payloads
 
-app.post("/login", (req, res) => {
+app.post('/login', (req, res) => {
   // AUTHENTICATION LOGIC, IF PASSED, DO THE FOLLOWING
   // ...
   const { loginEmail, loginPassword } = req.body;
-  if (loginEmail !== "admin@example.com" || loginPassword !== "admin") {
-    return res.json({ success: false, message: "Authentication failed" });
+  if (loginEmail !== 'admin@example.com' || loginPassword !== 'admin') {
+    return res.json({ success: false, message: 'Authentication failed' });
   }
 
   // RETURNING THE AUTHORIZATION TOKEN
@@ -37,10 +37,10 @@ app.post("/login", (req, res) => {
 // MIDDLEWARE
 // checks if the request token exists and has a proper structure
 function verifyToken(req, res, next) {
-  const bearerHeader = req.headers["authorization"];
+  const bearerHeader = req.headers['authorization'];
 
-  if (typeof bearerHeader !== "undefined") {
-    const bearer = bearerHeader.split(" ");
+  if (typeof bearerHeader !== 'undefined') {
+    const bearer = bearerHeader.split(' ');
     const bearerToken = bearer[1];
     req.token = bearerToken;
     next();
@@ -50,22 +50,22 @@ function verifyToken(req, res, next) {
 }
 
 // SERVING A PRIVATE RESOURCE
-app.get("/private", verifyToken, (req, res) => {
+app.get('/private', verifyToken, (req, res) => {
   // invokes the 'verifyToken' middleware
   jwt.verify(req.token, secret, (err, decoded) => {
     if (err) {
       if (err.expiredAt) {
         // if token expired, the err object will have an 'expiredAt' key
-        res.send({ message: "Your token has expired. Please re-authenticate" });
+        res.send({ message: 'Your token has expired. Please re-authenticate' });
       } else {
-        res.send({ message: "You are NOT authorized to access this resource" });
+        res.send({ message: 'You are NOT authorized to access this resource' });
       }
     } else {
       console.log(decoded.email);
       // we have access to the identification data used to generate the token
       // this way we can write a logic to access only the resources for which
       // a request is authorized
-      res.send({ message: "Well kept secret" });
+      res.send({ message: 'Well kept secret' });
     }
   });
 });
