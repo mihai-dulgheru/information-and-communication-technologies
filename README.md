@@ -1,3 +1,1 @@
-# TIC
-
-Tehnologii ale informației și comunicațiilor
+# Information and Communication Technologies
